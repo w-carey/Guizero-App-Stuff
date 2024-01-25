@@ -1,1 +1,43 @@
-
+sqlCode = ["""
+CREATE TABLE "tokafitnessDB_user" (
+	"user_ID"	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+	"user_forename"	TEXT,
+	"user_surname"	TEXT,
+	"user_email"	TEXT,
+	"user_name"	TEXT,
+	"user_password"	TEXT,
+	"user_darkmode"	BOOLEAN,
+	"user_font"	TEXT,
+	"user_premium"	TEXT,
+	"user_eventlog"	TEXT
+);
+CREATE TABLE "tokafitnessDB_weightTracker" (
+	"weight_ID"	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+	"weight_userID"	INTEGER,
+	"weight_value"	TEXT,
+	"weight_date"	TEXT,
+	CONSTRAINT "user_ID_FK"  FOREIGN KEY("weight_userID") REFERENCES "tokafitnessDB_user"("user_ID")
+);
+CREATE TABLE "tokafitnessDB_timetable" (
+	"timetable_ID"	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+	"timetable_userID"	INTEGER,
+	"timetable_monday"	TEXT,
+	"timetable_tuesday"	TEXT,
+	"timetable_wednesday"	TEXT,
+	"timetable_thursday"	TEXT,
+	"timetable_friday"	TEXT,
+	"timetable_saturday"	TEXT,
+	"timetable_sunday"	TEXT,
+	CONSTRAINT "user_ID_FK"  FOREIGN KEY("timetable_userID") REFERENCES "tokafitnessDB_user"("user_ID")
+);
+CREATE TABLE "tokafitnessDB_goals" (
+	"goals_ID"	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+	"goal_userID"	INTEGER,
+	"goal_start"	TEXT,
+	"goal_end"	TEXT,
+	"goal_type"	TEXT,
+	"goal_amount"	TEXT,
+	"goal_brief"	TEXT,
+	CONSTRAINT "user_ID_FK"  FOREIGN KEY("goal_userID") REFERENCES "tokafitnessDB_user"("user_ID")
+);
+"""]
