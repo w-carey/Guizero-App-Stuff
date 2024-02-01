@@ -1,3 +1,5 @@
+
+keyforms = [WORKOUTGUIDES, TIMETABLE, HOMEMENU]
 _USELESSBOX_					= Box(MENU, width=10, height=5, align="right")
 MENU_firstwhite					= Box(MENU, width=mainbox.tk.winfo_width()-215, height=mainbox.tk.winfo_height()-75, align="right")
 MENU_firstwhite.bg				= "#FFFFFF"
