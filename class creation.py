@@ -15,16 +15,3 @@ class TextBox(gz.TextBox):
 		alltextboxes.append(self)
 	####
 ####
-class Box(gz.Box):
-	def __init__(self, master, premium=False, addtomainlist=True, *arguments, **keywords):
-		gz.Box.__init__(self, master, *arguments, **keywords)
-		self.premium = premium
-		if addtomainlist and premium!="REMOVEWHENSIGNOUT":
-			allboxesWH.append([self, master])
-		####
-		self.tk.config(highlightthickness=0, bd=0)
-		if premium and premium!="REMOVEWHENSIGNOUT":
-			allpremiumboxes.append([self, premium])
-		####
-	####
-####
