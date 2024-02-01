@@ -1,11 +1,11 @@
 alltextboxes = []
 allboxesWH   = []
-App			= gz.App
+App		= gz.App
 Picture		= gz.Picture
 Text		= gz.Text
 PushButton	= gz.PushButton
 CheckBox	= gz.CheckBox
-ListBox     = gz.ListBox
+ListBox     	= gz.ListBox
 Combo		= gz.Combo
 class TextBox(gz.TextBox):
 	def __init__(self, master, placeholder=None, *arguments, **keywords):
@@ -19,7 +19,7 @@ class TextBox(gz.TextBox):
 ####
 class Box(gz.Box):
 	def __init__(self, master, *arguments, **keywords):
-		gz.TextBox.__init__(self, master, *arguments, **keywords)
-		allboxesWH.append(self)
+		gz.Box.__init__(self, master, *arguments, **keywords)
+		allboxesWH.append([self, master])
 	####
 ####
