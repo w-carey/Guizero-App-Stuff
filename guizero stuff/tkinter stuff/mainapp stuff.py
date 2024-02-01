@@ -7,3 +7,15 @@ mainapp.tk.resizable(False, False) # PREVENTS WINDOW RESIZE
 mainapp.tk.bind_all("<Button-1>", lambda event: event.widget.focus_set()) # NEEDED FOR PLACEHOLDER STUFF
 topbar = Picture(mainbox, image="topbar.png")
 mainbox.tk.pack();mainbox.tk.update()
+###
+newbox = Box(mainbox, width="fill", height="fill")
+LOGIN = Box(newbox, height=mainbox.tk.winfo_height
+(), width=mainbox.tk.winfo_width())
+SIGNUP = Box(newbox, height=mainbox.tk.winfo_height
+(), width=mainbox.tk.winfo_width())
+FORGOTPASSWORD = Box(newbox, height=mainbox.tk.winfo_height
+(), width=mainbox.tk.winfo_width())
+MENU = Box(newbox, height=mainbox.tk.winfo_height
+(), width=mainbox.tk.winfo_width())
+allForms = [LOGIN, SIGNUP, FORGOTPASSWORD, MENU]
+####
