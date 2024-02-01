@@ -1,3 +1,5 @@
+alltextboxes = []
+allboxesWH   = []
 App			= gz.App
 Picture		= gz.Picture
 Text		= gz.Text
@@ -13,5 +15,11 @@ class TextBox(gz.TextBox):
 			placeholderfunc(self, "reset", False)
 		####
 		alltextboxes.append(self)
+	####
+####
+class Box(gz.Box):
+	def __init__(self, master, *arguments, **keywords):
+		gz.TextBox.__init__(self, master, *arguments, **keywords)
+		allboxesWH.append(self)
 	####
 ####
